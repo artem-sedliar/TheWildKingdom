@@ -1,41 +1,168 @@
 //====================================================================================================
-.header {}
+.header {
 
-&__container {}
+&__container {
+display: grid;
+grid-template-columns: 1fr auto 1fr;
+gap: toRem(20);
+@include adaptiveValue("min-height", 152, 70);
+min-height: toRem(152);
+align-items: center;
+padding-top: toRem(10);
+padding-bottom: toRem(10);
+@media (max-width:$mobile){
+	gap: toRem(0);
+	 grid-template-columns: auto 1fr auto auto; 
 
-&____menu {}
+}
+}
 
-.menu {}
+&____menu {
 
-&____icon {}
+}
 
-.icon-menu {}
+&____icon {
 
-.menu__body {}
+}
 
-.menu__list {}
+&__logo {
+@include adaptiveValue("width", 217, 100);
+position: relative;
+z-index: 5;
+@media (max-width: $mobile){
+	.menu-open & {
+	 path {
+		fill:#fff;
+	 } 
+	}
+}
+}
 
-.menu__item {}
+&__action {
 
-.menu__link {}
+}
+}
+.menu {
+&__icon {
 
-.header__logo {}
+}
 
-.header__action {}
+&__body {
+@media (max-width: $mobile) {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	gap: toRem(30);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: -100%;
+	top: 0;
+	overflow: auto;
+	background-color: $bgGold;
+	transition: left 0.3s;
+	padding: toRem(100) toRem(15) toRem(30) toRem(15);
+	&::before {
+		content: "";
+		position: fixed;
+			width: 100%;
+			@include adaptiveValue("min-height", 152, 70);
+			left: -100%;
+			top: 0;
+			overflow: auto;
+			z-index: 2;
+			background-color: $bgGold;
+			transition: left 0.3s;
 
-.action-header {}
+	}
+}
+.menu-open &{
+	left: 0;
+	&::before {
+		left: 0;
+	}
+}
+}
 
-.action-header__link {}
+&__list {
+display: flex;
+flex-wrap: wrap;
+column-gap: toRem(47);
+row-gap: toRem(3);
+align-items: center;
+@include adaptiveValue("column-gap", 47, 20, 0, $containerWidth,
+	767.98);
 
-.action-header__button {}
+	@media (max-width: $mobile) {
+      flex-direction: column;
+	  row-gap: toRem(20);		
+	}
+}
 
-.button {}
+&__item {
 
-.button--border {}
+}
+
+&__link {
+display: inline-block;
+color: $bgGold;
+font-weight: 300;
+line-height: 152%;
+
+@media (max-width: $mobile) {
+   color: #fff;
+	font-size: toRem(28);
+}
+@media (any-hover: hover){
+	&:hover{
+		text-decoration: underline;
+	}
+}
+}
+}
+.icon-menu {
+
+}
+.action-header{
+	justify-content: flex-end;
+	display: flex;
+	flex-wrap: wrap;
+	@include adaptiveValue("column-gap", 47, 20, 0, $containerWidth, 767.98);
+	column-gap: toRem(47);
+	row-gap: toRem(3);
+	align-items: center;
+	@media (max-width:$mobile){
+		 justify-content: center; 
+	}
+
+	&__link {
+    display: inline-block;
+	color: $bgGold;
+	font-weight: 300;
+	line-height: 152%;
+	@media (max-width:$mobile){
+		 color: #fff; 
+	}
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&__button {
+@media (max-width:$tablet){
+	padding: toRem(8) toRem(20);
+}
+@media (max-width:$mobile){
+	 border: toRem(1) solid #fff; 
+	 color: #fff;
+}
+	}
+}
+
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
@@ -56,7 +183,10 @@
 			position: absolute;
 			width: 100%;
 			height: toRem(2);
-			background-color: #000;
+			background-color: $bgGold;
+			.menu-open & {
+			background-color: #fff;
+			}
 		}
 		&::before {
 			top: 0;
@@ -85,4 +215,4 @@
 		}
 	}
 }
-*/
+

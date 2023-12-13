@@ -43,8 +43,8 @@ position: relative;
 		color: $mainColor;
 		border: toRem(1) solid transparent;
 		&::before {
-			
-			opacity: 1;
+		opacity: 1;
+		
 		}
 	}
 }
