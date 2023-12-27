@@ -56,7 +56,9 @@ align-items: center;
 }
 .slide-hero {
 
-&__body {}
+&__body {
+    border-radius: ;
+}
 
 &__image {}
 }
