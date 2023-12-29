@@ -20,7 +20,9 @@
 	border-radius: toRem(5);
 	position: relative;
 	list-style: none;
-	&::marker {
+	&::marker,
+	&::-webkit-details-marker {
+		display: none;
 	}
 	._spoller-init & {
 		cursor: pointer;
