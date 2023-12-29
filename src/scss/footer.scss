@@ -80,8 +80,6 @@
         }
     }
 
-    &__social {}
-
     &__logo {
         justify-self: center;
         @include adaptiveValue("width", 287, 80);
@@ -157,8 +155,6 @@
         flex-wrap: wrap;
         @include adaptiveValue("column-gap", 42, 15);
     }
-
-    &__item {}
 
     &__link {
         font-weight: 300;
@@ -252,12 +248,6 @@
         border-radius: 0 !important;
         width: 100%;
         display: block;
-        &._form-focus {
-
-        }
-                 &._form-error {
-
-                 }
     }
 .input[placeholder]:not([data-placeholder-nohiden]) {
     &::placeholder {
@@ -278,6 +268,4 @@
         }
     }
 }
-
-
 //====================================================================================================

@@ -45,15 +45,15 @@ if (galleries.length) {
 			gallery,
 			galleryClass: lightGallery(gallery, {
 				// plugins: [lgZoom, lgThumbnail],
-				licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
 				speed: 500,
+				licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
+				selector: ".gallery__image"
 			})
 		})
 	});
 	// Додаємо в об'єкт модулів
 	flsModules.gallery = galleyItems;
 }
-
 
 
 
